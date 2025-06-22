@@ -1,0 +1,72 @@
+# 🛠️ How to Run the Wearable Health Monitoring Device Project
+
+This guide will walk you through setting up and running the **Wearable Health Monitoring Device** on the Arduino platform, both physically and via simulation using Wokwi.
+
+---
+
+## 📦 Requirements
+
+### 🧰 Hardware (if running on real Arduino):
+- Arduino Uno
+- Breadboard
+- Jumper wires
+- LCD Display (16x2) with I2C or standard pin connections
+- Push Button
+- LED
+- Servo Motor
+- (Optional) Heart rate & Temperature sensors
+
+### 💻 Software:
+- [Arduino IDE](https://www.arduino.cc/en/software)
+- [Wokwi Arduino Simulator](https://wokwi.com)
+
+---
+
+## ▶️ Running on Wokwi Simulator
+
+1. Visit [https://wokwi.com](https://wokwi.com)
+2. Create a new project or open existing one
+3. Copy and paste the Arduino `.ino` code from this repository
+4. Add the necessary components (LCD, servo, LED, button) using Wokwi’s component panel
+5. Simulate the circuit and watch the output on LCD
+
+---
+
+## ⚙️ Running on Arduino Hardware
+
+1. Open the project `.ino` file in Arduino IDE
+2. Connect components as per the schematic:
+   - LCD to digital pins (or via I2C)
+   - Servo to Pin 9
+   - Button and LED to digital pins (defined in code)
+3. Select **Board**: Arduino Uno from Tools > Board
+4. Connect your Arduino via USB
+5. Click the ✅ Verify button to compile
+6. Click the → Upload button to run the program
+7. Observe output on the LCD and responses to button presses
+
+---
+
+## 📋 Notes
+
+- If you're using a physical LCD without I2C, ensure you correctly define the `LiquidCrystal` pins in your code.
+- Adjust pin numbers in the code if your wiring layout is different.
+- For real-time data collection, replace simulated values with actual sensor readings.
+
+---
+
+## 🧪 Testing
+
+- Press the button to simulate water intake — LED turns on, servo dispenses, heart rate increases.
+- Watch random temperature and heart rate updates on the LCD.
+- Reset Arduino or reconnect USB to restart.
+
+---
+
+## 🆘 Troubleshooting
+
+- **LCD not displaying**: Check wiring and contrast pin (Vo).
+- **Servo not moving**: Ensure it's connected to 5V and GND properly.
+- **Button not responding**: Add a pull-down resistor or use `INPUT_PULLUP` in code.
+
+---
